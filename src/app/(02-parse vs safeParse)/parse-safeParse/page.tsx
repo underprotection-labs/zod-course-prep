@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const UserSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  age: z.number().positive("Age must be positive"),
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.email({ message: "Invalid email address" }),
+  age: z.number().positive({ message: "Age must be positive" }),
 });
 
 type User = z.infer<typeof UserSchema>;
