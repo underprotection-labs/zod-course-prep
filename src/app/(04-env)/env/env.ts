@@ -11,7 +11,7 @@ export const env = createEnv({
   },
 
   client: {
-    NEXT_PUBLIC_APP_URL: z.url(),
+    NEXT_PUBLIC_APP_URL: z.url().optional(),
   },
 
   experimental__runtimeEnv: {
